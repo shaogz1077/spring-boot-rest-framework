@@ -32,7 +32,7 @@ import static org.junit.Assert.assertEquals;
 public class DemoRestTests {
 
 
-    String url = "http://localhost:8080/ping";
+    String url = "http://localhost:8012/ping";
 
     @Test
     public void testPing() throws Exception {
