@@ -16,7 +16,7 @@
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
                         connectionURL="jdbc:mysql://localhost:3306/mydb"
                         userId="root"
-                        password="raycool">
+                        password="5201314">
         </jdbcConnection>
 
         <javaModelGenerator targetPackage="test.sample.mybatis.model"
@@ -29,15 +29,13 @@
                              targetProject="../test/java/"
                              type="XMLMAPPER"/>
 
-        <table tableName="T_User" domainObjectName="User"
+        <table tableName="account" domainObjectName="Account"
                enableCountByExample="false"
                enableUpdateByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="false"
                selectByExampleQueryId="false">
-            <generatedKey column="d_id" sqlStatement="MYSQL" identity="true"/>
-            <columnRenamingRule searchString="^D_"
-                                replaceString=""/>
+            <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
         </table>
 
 
