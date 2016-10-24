@@ -34,8 +34,5 @@ dao采用mybatis 3.3.0 + tk.mybatis通用Mapper3.1.3 , 支持事务回滚
 }
 ```
 ---  
-###在原作者基础上增加如下内容
-使用代码生成器的脚本  ./gen.sh mydb 其中mydb对应的是xml的库名。
-增加多种开发测试生产环境的切换  spring.profiles.active=dev
-配置文件里面增加 server.compression.enabled 表示tomcat是否启用gzip
+
 使用过程中如有任何问题请联系:[菩提树下的杨过](http://yjmyzz.cnblogs.com/ "http://yjmyzz.cnblogs.com/")

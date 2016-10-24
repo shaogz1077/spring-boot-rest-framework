@@ -1,6 +1,5 @@
 package test.spring.boot.rest;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.SpringApplicationConfiguration;
@@ -17,8 +16,6 @@ import spring.boot.rest.demo.main.DemoRestApplication;
 import java.io.ByteArrayInputStream;
 import java.nio.charset.Charset;
 import java.util.zip.GZIPInputStream;
-
-import javax.validation.constraints.AssertTrue;
 
 import static org.junit.Assert.assertEquals;
 
@@ -42,8 +39,7 @@ public class DemoRestTests {
         ResponseEntity<DataResult> entity = new TestRestTemplate()
                 .getForEntity(url, DataResult.class);
         assertEquals(HttpStatus.OK, entity.getStatusCode());
-        //assertEquals("running", entity.getBody().getData());
-
+        assertEquals("running", entity.getBody().getData());
     }
 
     @Test
@@ -57,9 +53,7 @@ public class DemoRestTests {
         assertEquals(HttpStatus.OK, entity.getStatusCode());
         GZIPInputStream inflater = new GZIPInputStream(
                 new ByteArrayInputStream(entity.getBody()));
-       
         try {
-        	
             assertEquals("{\"data\":\"running\",\"errorCode\":null,\"errorDesc\":null,\"elapsedMilliseconds\":0,\"success\":true}",
                     StreamUtils.copyToString(inflater, Charset.forName("UTF-8")));
         } finally {
